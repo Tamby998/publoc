@@ -1,0 +1,41 @@
+SELECT * FROM regisseur INNER JOIN panneau ON regisseur.ID_REGISSEUr = panneau.ID_REGISSEUR
+SELECT * FROM panneau LEFT JOIN carte ON panneau.ID_PANNEAU = carte.ID_PANNEAU WHERE panneau.ID_PANNEAU = NULL
+
+SELECT * FROM panneau INNER JOIN historique ON panneau.ID_REGISSEUr = historique.ID_REGISSEUR
+
+
+SELECT panneau.ID_PANNEAU, panneau.TYPE, panneau.SERVICE, panneau.FACE, panneau.LUMIERE, panneau.PERIODE, panneau.LARGEUR, panneau.LONGUEUR, panneau.LOGITUDE, panneau.LATITUDE, panneau.VILLE, panneau.HABILLAGE, panneau.STATUS, panneau.ID_REGISSEUR FROM panneau LEFT JOIN carte ON panneau.ID_PANNEAU = carte.ID_PANNEAU WHERE carte.id_carte IS NULL
+
+
+SELECT panneau.ID_PANNEAU, panneau.TYPE, panneau.SERVICE, panneau.FACE, panneau.LUMIERE, panneau.PERIODE, panneau.LARGEUR, panneau.LONGUEUR, panneau.LOGITUDE, panneau.LATITUDE, panneau.VILLE, panneau.HABILLAGE, panneau.STATUS, panneau.ID_REGISSEUR, regisseur.ID_REGISSEUR, regisseur.status FROM panneau LEFT JOIN carte ON panneau.ID_PANNEAU = carte.ID_PANNEAU LEFT JOIN regisseur ON regisseur.ID_REGISSEUR = panneau.ID_REGISSEUR WHERE carte.id_carte IS NULL
+
+
+$this->db->select('*');
+$this->db->from('regisseur');
+$this->db->join('comments', 'comments.id = blogs.id');
+$query = $this->db->get();
+
+<?php if((sizeof($infos))>0){
+foreach($infos as $info){
+?>
+
+<?php echo $info->ID_REGISSEUR; ?>
+<?php echo $info->ID_PANNEAU; ?>
+
+
+<?php
+}
+}else{ ?>
+  <h1>Aucun ID_REGISSEUR recuperer</h1>
+<?php } ?>
+SELECT * FROM panneau WHERE VILLE = 'Fianarantsoa' AND HABILLAGE = 'Bache'
+SELECT * FROM panneau INNER JOIN regisseur ON panneau.ID_REGISSEUR = regisseur.ID_REGISSEUR WHERE panneau.ID_PANNEAU = 6
+
+
+
+
+SELECT * FROM panneau LEFT JOIN carte ON carte.ID_PANNEAU = NULL WHERE panneau.ID_REGISSEUR = 3
+
+
+
+SELECT panneau.ID_PANNEAU, panneau.TYPE, panneau.SERVICE, panneau.FACE, panneau.LUMIERE, panneau.LARGEUR, panneau.LONGUEUR, panneau.LOGITUDE, panneau.LATITUDE, panneau.VILLE, panneau.HABILLAGE, panneau.STATUS, panneau.ID_REGISSEUR, regisseur.ID_REGISSEUR, regisseur.status FROM panneau LEFT JOIN carte ON panneau.ID_PANNEAU = carte.ID_PANNEAU LEFT JOIN regisseur ON regisseur.ID_REGISSEUR = panneau.ID_REGISSEUR WHERE carte.id_carte IS NULL AND panneau.ID_REGISSEUR = 3
